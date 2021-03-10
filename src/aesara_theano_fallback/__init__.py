@@ -6,8 +6,7 @@ __all__ = [
     "sparse",
     "tensor",
     "change_flags",
-    "ifelse",
-    "slinalg",
+    "ifelse"
 ]
 
 from . import graph, tensor

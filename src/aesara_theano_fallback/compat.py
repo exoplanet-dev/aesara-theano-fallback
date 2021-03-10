@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ["aesara", "sparse", "tensor", "change_flags", "ifelse", "slinalg"]
+__all__ = ["aesara", "sparse", "tensor", "change_flags", "ifelse"]
 
 
 try:
