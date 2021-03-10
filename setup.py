@@ -57,7 +57,7 @@ if __name__ == "__main__":
         license=find_meta("license"),
         description=find_meta("description"),
         long_description=read("README.md"),
-        long_description_content_type="text/x-markdown",
+        long_description_content_type="text/markdown",
         packages=PACKAGES,
         package_dir={"": "src"},
         include_package_data=True,

@@ -1,11 +1,15 @@
 # aesara-theano-fallback
 
-Striving towards backwards compatibility as [Theano](https://github.com/theano/theano) is replaced by
-[Aesara](https://github.com/pymc-devs/aesara) by the [PyMC3 project](https://docs.pymc.io). The idea is
-to provide a nearly drop in replacement for importing `aesara` that will fall back onto `theano` when
-`aesara` is not installed. This was specifically designed to support the [exoplanet](https://github.com/exoplanet-dev/exoplanet)
-and [starry](https://github.com/rodluger/starry) projects so it might not support all of the features
-that you need. If you find something that isn't supported, please submit a pull request!
+Striving towards backwards compatibility as
+[Theano](https://github.com/theano/theano) is replaced by
+[Aesara](https://github.com/pymc-devs/aesara) by the [PyMC3
+project](https://docs.pymc.io). The idea is to provide a nearly drop in
+replacement for importing `aesara` that will fall back onto `theano` when
+`aesara` is not installed. This was specifically designed to support the
+[exoplanet](https://github.com/exoplanet-dev/exoplanet) and
+[starry](https://github.com/rodluger/starry) projects so it might not support
+all of the features that you need. If you find something that isn't supported,
+please submit a pull request!
 
 ## Installaion
 
@@ -29,9 +33,10 @@ For top-level access, use
 from aesara_theano_fallback import aesara
 ```
 
-One place where the syntax has changed significantly between Theano and Aesara is the `theano.gof`
-module was re-named to `aesara.graph` and the contents were moved around a little bit. For exoplanet
-and starry, we define a few custom `Op`s and you can use this library to do that as follows:
+One place where the syntax has changed significantly between Theano and Aesara
+is the `theano.gof` module was re-named to `aesara.graph` and the contents were
+moved around a little bit. For exoplanet and starry, we define a few custom `Op`s
+and you can use this library to do that as follows:
 
 ```python
 from aesara_theano_fallback.graph import basic, op
