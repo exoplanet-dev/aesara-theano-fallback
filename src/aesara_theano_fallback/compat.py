@@ -23,9 +23,8 @@ except ImportError:
 
     # General imports: these are the same for both theano and theano-pymc
     import theano as aesara
-    from theano import sparse, tensor
+    from theano import sparse
     from theano.ifelse import ifelse
-    from theano.tensor import slinalg
 
     try:
         from theano.configparser import change_flags
@@ -34,7 +33,6 @@ except ImportError:
 
 else:
     # Aesara is installed
-    from aesara import sparse, tensor
+    from aesara import sparse
     from aesara.configparser import change_flags
     from aesara.ifelse import ifelse
-    from aesara.tensor import slinalg

@@ -10,8 +10,8 @@ __all__ = [
     "slinalg",
 ]
 
-from . import graph
-from .compat import aesara, sparse, tensor, change_flags, ifelse, slinalg
+from . import graph, tensor
+from .compat import aesara, sparse, change_flags, ifelse
 from .aesara_theano_fallback_version import version as __version__  # noqa
 
 __author__ = "Dan Foreman-Mackey, Rodrigo Luger"
