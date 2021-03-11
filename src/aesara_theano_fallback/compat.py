@@ -1,13 +1,21 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ["aesara", "sparse", "tensor", "change_flags", "ifelse"]
+__all__ = ["USE_AESARA", "aesara", "sparse", "change_flags", "ifelse"]
 
 
+USE_AESARA = False
 try:
     import aesara
-
 except ImportError:
+    aesara = None
+else:
+    try:
+        import pymc3.theanof  # noqa
+    except ImportError:
+        USE_AESARA = True
 
+
+if aesara is None or not USE_AESARA:
     try:
         import theano.graph
 

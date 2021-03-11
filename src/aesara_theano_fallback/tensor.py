@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
-try:
+from .compat import USE_AESARA
+
+if USE_AESARA:
     from aesara.tensor import *  # noqa
-
-except ImportError:
-    from theano.tensor import *  # noqa
-    from theano.tensor import slinalg
-
-else:
     from aesara.tensor import slinalg  # noqa
+else:
+    from theano.tensor import *  # noqa
+    from theano.tensor import slinalg  # noqa

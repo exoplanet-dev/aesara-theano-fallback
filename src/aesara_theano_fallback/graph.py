@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
-try:
+from .compat import USE_AESARA
+
+if USE_AESARA:
     from aesara.graph import *  # noqa
 
-except ImportError:
+else:
     try:
         from theano.graph import *  # noqa
 
