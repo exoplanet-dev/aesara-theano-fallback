@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
 __all__ = [
+    "USE_AESARA",
     "graph",
     "aesara",
     "sparse",
     "tensor",
     "change_flags",
-    "ifelse"
+    "ifelse",
 ]
 
 from . import graph, tensor
-from .compat import aesara, sparse, change_flags, ifelse
+from .compat import USE_AESARA, aesara, sparse, change_flags, ifelse
 from .aesara_theano_fallback_version import version as __version__  # noqa
 
 __author__ = "Dan Foreman-Mackey, Rodrigo Luger"

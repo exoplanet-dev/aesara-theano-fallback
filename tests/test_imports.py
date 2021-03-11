@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import pytest
+
 
 def test_core_imports():
     from aesara_theano_fallback import tensor
@@ -23,3 +25,12 @@ def test_graph_op_imports():
 
     op.Op
     op.ExternalCOp
+
+
+def test_pymc3_compat():
+    import aesara_theano_fallback.tensor as tt
+
+    pm = pytest.importorskip("pymc3")
+    with pm.Model():
+        x = pm.Normal("x", shape=10)
+        tt.dot(x, x)
