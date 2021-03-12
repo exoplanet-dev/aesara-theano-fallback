@@ -24,7 +24,7 @@ if aesara is None or not USE_AESARA:
         try:
             import theano.gof
 
-        except (ImportError, AttributeError):
+        except ImportError:
             raise ImportError(
                 "None of 'aesara', 'theano-pymc', or 'theano' are installed"
             )
@@ -36,7 +36,7 @@ if aesara is None or not USE_AESARA:
 
     try:
         change_flags = theano.config.change_flags
-    except ImportError:
+    except (ImportError, AttributeError):
         from theano.configparser import change_flags
 
 else:
