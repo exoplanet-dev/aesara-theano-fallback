@@ -24,7 +24,7 @@ if aesara is None or not USE_AESARA:
         try:
             import theano.gof
 
-        except ImportError:
+        except (ImportError, AttributeError):
             raise ImportError(
                 "None of 'aesara', 'theano-pymc', or 'theano' are installed"
             )
