@@ -35,9 +35,9 @@ if aesara is None or not USE_AESARA:
     from theano.ifelse import ifelse
 
     try:
-        from theano.configparser import change_flags
-    except ImportError:
         change_flags = theano.config.change_flags
+    except (ImportError, AttributeError):
+        from theano.configparser import change_flags
 
 else:
     # Aesara is installed
