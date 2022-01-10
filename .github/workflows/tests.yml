@@ -19,7 +19,8 @@ jobs:
           - "theano-pymc"
           - "aesara"
           - '"pymc3==3.11.1" "aesara"'
-          - "https://github.com/pymc-devs/aesara/archive/master.zip"
+          - "https://github.com/pymc-devs/pymc/archive/v3.zip"
+          - "https://github.com/pymc-devs/pymc/archive/main.zip"
 
     steps:
       - uses: actions/checkout@v2
