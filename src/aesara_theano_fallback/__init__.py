@@ -10,9 +10,18 @@ __all__ = [
     "ifelse",
 ]
 
-from . import graph, tensor
 from .compat import USE_AESARA, aesara, sparse, change_flags, ifelse
 from .aesara_theano_fallback_version import version as __version__  # noqa
+
+if USE_AESARA:
+    # Oh boy!
+    import sys
+    from aesara import graph, tensor
+    sys.modules["aesara_theano_fallback.graph"] = graph
+    sys.modules["aesara_theano_fallback.tensor"] = tensor
+
+else:
+    from . import graph, tensor
 
 __author__ = "Dan Foreman-Mackey, Rodrigo Luger"
 __email__ = "foreman.mackey@gmail.com"
