@@ -34,3 +34,12 @@ def test_pymc3_compat():
     with pm.Model():
         x = pm.Normal("x", shape=10)
         tt.dot(x, x)
+
+
+def test_pymc_compat():
+    import aesara_theano_fallback.tensor as tt
+
+    pm = pytest.importorskip("pymc")
+    with pm.Model():
+        x = pm.Normal("x", shape=10)
+        tt.dot(x, x)
